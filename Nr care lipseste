@@ -1,0 +1,17 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    FILE *n;
+    int V[11]={0};
+    int nr;
+    n=fopen("numere2.txt", "r");
+ while(1){
+ fscanf(n, "%d",&nr);
+ if(feof(n))break;
+   V[nr-1]=1;}
+    for(int i=0;i<11;i++)if(V[i]!=1)printf("Numarul %d lipseste", i+1);
+  fclose(n);
+    return 0;
+}
