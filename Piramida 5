@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    FILE *p;
+    p=fopen("writep.txt", "w");
+    int i,j,n;
+    scanf("%d",&n);
+    int aux=n;
+    for(i=n; i>1; i--)
+    {
+        for(j=n*2-1; j>0; j--)
+            if(i==j || i+j==n*2)
+                fprintf(p, "*");
+            else
+                fprintf(p, " ");
+
+        fprintf(p, "\n");
+    }
+    for(i=0; i<n*2-1; i++)
+        fprintf(p,"*");
+    return 0;
+}
