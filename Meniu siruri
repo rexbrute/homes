@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+char s1[100], s2[100];
+int i;
+int ok;
+void caracter(){
+if(s1[0]==s2[0])printf("Sirurile au acelasi prim caracter");
+else printf("Sirurile au primul caracter diferit");}
+
+void continut()
+{for(i=0;i<strlen(s1);i++){
+    if(s1[i]!=s2[i]) ok=0;
+    else ok=1;}
+    if(ok==1)printf("Sirurile au acelasi continut");
+    else printf("Sirurile au continut diferit");
+}
+
+void lung()
+{if(strlen(s1)==strlen(s2))
+    printf("Sirurile au aceeasi lungime");
+    else printf("Sirurile au lungime diferita");}
+
+int main()
+{
+    printf("Introduceti doua siruri pentru a accesa meniul!");
+    printf("Primul sir:");
+    gets(s1);
+    printf("Al doilea sir:");
+    gets(s2);
+int var=1;
+while(var){
+    printf("\n\nAlege unul dintre urmatoarele optiuni:\n-----------------------------------------------\n");
+    printf("\n1-Verifica daca sirurile au lungimea egala"
+           "\n2-Verifica daca sirurile au acelasi prim caracter"
+           "\n3-Verifica daca continutul sirurilor este acelasi"
+           "\n0-EXIT");
+           scanf("%c",var);
+           switch(var){
+           case 1: lung(); break;
+           case 2: caracter(); break;
+           case 3: continut(); break;
+           case 0: exit(1);}
+}
+
+    return 0;
+}
